@@ -32,11 +32,7 @@ for i=1:Nb
 %     Lx = size(Block,2); x3 = 1024;
 %     LsPSF = PSF(:,Lb+1:end-Lb,:).*P2(:,x3-Lx/2+1:x3+Lx/2,:);
     LsPSF = flip(LsPSF,3); % flip the PSF if necessary
-    
-    % compensate offset
-%     Idx = floor(x1/2+x2/2);
-%     lsPSF1 = circshift(lsPSF,-round(Offset(Idx)),3);
-    
+        
 %     F{k} = RichdLucy1(denoising(Block), lsPSF1, N,lambda); %1e-6
     Xid(k,:) = [abs(x1-B(i,1))+1 abs(x2-B(i,2))];
     
